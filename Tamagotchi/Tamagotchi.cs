@@ -19,7 +19,8 @@ namespace Tamagotchi
 
         public void Feed()
         {
-            hunger--;
+            int rNumber = gen.Next(1, 4);
+            hunger -= rNumber;
             Console.WriteLine("You have fed your Tamagotchi!");
         }
 
@@ -64,8 +65,8 @@ namespace Tamagotchi
             }
             else {
                 Console.WriteLine("Your Tamagotchi is dead!");
+                Console.ReadLine();   
             }
-
         }
 
         public bool GetAlive()
@@ -82,7 +83,8 @@ namespace Tamagotchi
 
         private void ReduceBoredom()
         {
-            boredom--;
+            int rNumber = gen.Next(1, 4);
+            boredom -= rNumber;
             Console.WriteLine("Your Tamagotchi had fun!");
         }
     }

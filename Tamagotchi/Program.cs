@@ -30,8 +30,8 @@ namespace Tamagotchi
                 Console.WriteLine("1: Feed, 2: Speak, 3: Teach, 4: See stats.");
                 playerChoice = Console.ReadLine();
                 PlayerAction(playerChoice, t);
-                t.Tick();
                 isPetAlive = t.GetAlive();
+                t.Tick();
             }
         }
 
