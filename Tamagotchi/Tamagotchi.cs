@@ -11,7 +11,7 @@ namespace Tamagotchi
 
         private List<string> words = new List<string>();
 
-        private bool isAlive;
+        private bool isAlive = true;
 
         private Random gen = new Random();
 
@@ -20,22 +20,22 @@ namespace Tamagotchi
         public void Feed()
         {
             hunger--;
+            Console.WriteLine("You have fed your Tamagotchi!");
         }
 
         public void Hi()
         {  
-            int rWord = gen.Next();
-
-            Console.WriteLine(rWord);
-
+            int rWord = gen.Next(words.Count);
+            Console.WriteLine("Your Tamagotchi says:");
+            Console.WriteLine(words[rWord]);
             ReduceBoredom();
         }
 
         public void Teach(string word)
         {
-            Console.WriteLine("Which word would you like to teach your pet?");
+            Console.WriteLine("Which word would you like to teach your Tamagotchi?");
             words.Add(Console.ReadLine());
-
+            Console.WriteLine("Your Tamagotchi learnt a new word!");
             ReduceBoredom();
         }
 
@@ -62,10 +62,10 @@ namespace Tamagotchi
             Console.WriteLine(boredom);
             if (isAlive)
             {
-                Console.WriteLine("Your tamagotchi is alive!");
+                Console.WriteLine("Your Tamagotchi is alive!");
             }
             else {
-                Console.WriteLine("Your tamagotchi is dead!");
+                Console.WriteLine("Your Tamagotchi is dead!");
             }
 
         }
@@ -85,6 +85,7 @@ namespace Tamagotchi
         private void ReduceBoredom()
         {
             boredom--;
+            Console.WriteLine("Your Tamagotchi had fun!");
         }
 
     }
