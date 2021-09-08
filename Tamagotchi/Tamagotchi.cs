@@ -19,6 +19,7 @@ namespace Tamagotchi
 
         public void Feed()
         {
+            //Randomize amount of decreased hunger
             int rNumber = gen.Next(1, 4);
             hunger -= rNumber;
             Console.WriteLine("You have fed your Tamagotchi!");
@@ -26,6 +27,7 @@ namespace Tamagotchi
 
         public void Hi()
         {  
+            //Say a random word
             int rWord = gen.Next(words.Count);
             Console.WriteLine("Your Tamagotchi says:");
             Console.WriteLine(words[rWord]);
@@ -43,7 +45,7 @@ namespace Tamagotchi
             hunger++;
             boredom++;
 
-            //Set alive value for tamagotchi
+            //Set tamagotchi alive value
             if (hunger > 10 || boredom > 10)
             {
                 isAlive = false;
@@ -71,6 +73,7 @@ namespace Tamagotchi
 
         public bool GetAlive()
         {
+            //Check if tamagotchi is alive
             if (isAlive)
             {
                 return true;
@@ -83,6 +86,7 @@ namespace Tamagotchi
 
         private void ReduceBoredom()
         {
+            //Randomize amount of decreased boredom
             int rNumber = gen.Next(1, 4);
             boredom -= rNumber;
             Console.WriteLine("Your Tamagotchi had fun!");

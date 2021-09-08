@@ -6,7 +6,9 @@ namespace Tamagotchi
     {
         static void Main(string[] args)
         {
+            //Create tamagotchi instance
             Tamagotchi pet = new Tamagotchi();
+
             ChooseName(pet);
             GameLoop(pet);
             Console.WriteLine("Your Tamagotchi died :(! Better luck next time.");
@@ -15,6 +17,7 @@ namespace Tamagotchi
 
         static void ChooseName(Tamagotchi t)
         {
+            //Choose tamagotchi name
             Console.WriteLine("What would you like to name your Tamagotchi?");
             t.name = Console.ReadLine();
         }
@@ -24,6 +27,7 @@ namespace Tamagotchi
             bool isPetAlive = t.GetAlive();
             string playerChoice = "0";
 
+            //Game loop while tamagotchi is alive
             while (isPetAlive)
             {
                 Console.WriteLine("What would you like to do? Input one of the following numbers:");
@@ -37,6 +41,7 @@ namespace Tamagotchi
 
         static void PlayerAction(string c, Tamagotchi t)
         {
+            //Check which action the player wants to do
             if (c == "1")
             {
                 t.Feed();
