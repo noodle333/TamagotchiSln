@@ -13,7 +13,6 @@ namespace Tamagotchi
             Console.ReadLine();
         }
 
-
         static void ChooseName(Tamagotchi t)
         {
             Console.WriteLine("What would you like to name your Tamagotchi?");
@@ -48,7 +47,8 @@ namespace Tamagotchi
             }
             else if (c == "3")
             {
-                t.Teach("placeholder");
+                Console.WriteLine("Which word would you like to teach your pet?");
+                t.Teach(Console.ReadLine());
             }
             else if (c == "4")
             {

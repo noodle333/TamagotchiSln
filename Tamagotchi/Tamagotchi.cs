@@ -33,9 +33,7 @@ namespace Tamagotchi
 
         public void Teach(string word)
         {
-            Console.WriteLine("Which word would you like to teach your Tamagotchi?");
-            words.Add(Console.ReadLine());
-            Console.WriteLine("Your Tamagotchi learnt a new word!");
+            words.Add(word);
             ReduceBoredom();
         }
 
@@ -87,7 +85,5 @@ namespace Tamagotchi
             boredom--;
             Console.WriteLine("Your Tamagotchi had fun!");
         }
-
     }
-
 }
